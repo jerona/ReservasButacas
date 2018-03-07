@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+}
+
+
+/*Cabecera comun*/
+header{
+    width:100%;
+    font-size:0rem;
+}
+
+header img{
+    height:100%;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+}
+
+#botonIniciarSesion,#botonRegistrarse{
+    border:2px solid black;
+}
+
+header > div{
+    display: inline-block;
+    width:50%;
+    height:50px;
+    font-size:1rem;
+}
+
+header div:nth-child(1){
+    vertical-align: top;
+    background-color:black;
+}
+
+header div:nth-child(2){
+    text-align:right;
+    vertical-align: top;
+    background-color:white;
+}
+
+
+article:nth-child(1){
+    width:100%;
+    text-align:center;
+    background-color:white;
+    border:2px solid black;
+    color:black;
+}
+
+.datosPelicula{
+    display:flex;
+    flex-flow:row wrap;
+    flex:0 0 100%;
+    justify-content:space-between;
+    align-items:center;
+    border-left:5px solid black;
+    margin: 1px 0px 0px 0px;
+    padding: 10px 1px 5px 50px;
+}
+
+.datosPelicula span:nth-child(1), .datosPelicula span:nth-child(3){
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+.datosPelicula span:nth-child(2){
+    flex-basis:25%;
+}
+
+.input-container strong{
+    color:red;
+}
+
+form{
+    margin-top: 30px;
+}
+
+form div a{
+    padding-left:20px;
+}
+
+article:nth-child(1) a{
+text-decoration: none;
+}
+
+
+/** https://www.cssmatic.com/es/gradient-generator#
+* 
+*/
+article:nth-child(2){
+    
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+    
+    
+    
+    }
+
+
+/*Footer Comun*/
+footer > div{
+    font-size:1rem;
+    display: inline-block;
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+/*Fin footer*/

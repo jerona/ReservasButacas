@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+}
+
+
+/*Cabecera comun*/
+header{
+    width:100%;
+    font-size:0rem;
+}
+
+header img{
+    height:100%;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+}
+
+#botonIniciarSesion,#botonRegistrarse{
+    border:2px solid black;
+}
+
+header > div{
+    display: inline-block;
+    width:50%;
+    height:50px;
+    font-size:1rem;
+}
+
+header div:nth-child(1){
+    vertical-align: top;
+    background-color:black;
+}
+
+header div:nth-child(2){
+    text-align:right;
+    vertical-align: top;
+    background-color:white;
+}
+
+
+article:nth-child(1){
+    width:100%;
+    text-align:center;
+    background-color:white;
+    border:2px solid black;
+    color:black;
+}
+
+
+article:nth-child(2) h1{
+ font-size:1.2em;
+}
+
+article:nth-child(2) h2{
+    font-size:1em;
+}
+
+
+article:nth-child(2){
+    width:100%;
+    text-align:center;
+    background-color:whitesmoke;
+    border-style:solid;
+    border-top:0px;
+    color:black;
+}
+
+h1{
+    text-align:center;
+}
+
+
+.datosPelicula{
+    display:flex;
+    flex-flow:row wrap;
+    flex:0 0 100%;
+    justify-content:space-between;
+    align-items:center;
+    border-left:10px solid black;
+    margin: 1px 0px 1px 1px;
+    padding: 10px 1px 5px 50px;
+}
+
+.datosPelicula span:nth-child(1), .datosPelicula span:nth-child(3){
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+.datosPelicula span:nth-child(2){
+    flex-basis:25%;
+}
+
+.input-container strong{
+    color:red;
+}
+
+form{
+    margin-top: 30px;
+}
+
+form div a{
+    padding-left:20px;
+}
+
+article:nth-child(1) a{
+text-decoration: none;
+}
+
+/*Footer Comun*/
+footer > div{
+    font-size:1rem;
+    display: inline-block;
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+/*Fin footer*/

@@ -1,0 +1,326 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+}
+
+/*Cabecera comun*/
+header{
+    width:100%;
+    font-size:0rem;
+
+}
+
+header img{
+    height:100%;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+}
+
+#botonIniciarSesion,#botonRegistrarse{
+    border:2px solid black;
+}
+
+header > div{
+    display: inline-block;
+    width:50%;
+    height:50px;
+    font-size:1rem;
+}
+
+header div:nth-child(1){
+    vertical-align: top;
+    background-color:black;
+}
+
+header div:nth-child(2){
+    text-align:right;
+    vertical-align: top;
+    background-color:black;
+}
+
+/*Fin cabecera*/
+
+/*Asterisco*/
+strong abbr{
+    color:red;
+}
+
+/*Arregla espaciado columna inline-block*/
+section{
+    background-color: black;
+    font-size:0;
+}
+
+section >*{
+    font-size:1rem;
+}
+/*Fin Arreglo*/
+
+/*Articulo comun*/
+
+article{
+    background-color: black;
+}
+
+article:nth-child(1){
+    width:100%;
+    text-align:center;
+    background-color:white;
+    border:2px solid black;
+    color:black;
+}
+
+article:nth-child(1) a{
+    text-decoration: none;
+    color:rgb(64, 64, 243);
+}
+
+article:nth-child(2){
+    background-color:white;
+    text-align:center;
+}
+
+article:nth-child(5){
+    text-align:center;
+    margin-top:1%;
+    border-top:2px solid white;
+    margin-bottom:1%;
+    color:white;
+    background-color:black;
+}
+
+article:nth-child(5) p{
+    padding-top:1%;
+    padding-bottom:1%;
+    border-bottom:1px solid white;
+}
+
+.left .texto img, .left .voces img,
+.right .texto img, .right .voces img{
+    width:20px;
+    height:20px;
+}
+
+.pelicula{
+    text-align:center;
+}
+    .pelicula .reserva_sms,  .pelicula .reserva_correo{
+        display:flex;
+        justify-content: center;
+        margin-top:2%;
+        align-items:center;
+    }
+
+    .pelicula .reserva_sms{
+        background-color: #cf2a27;
+    }
+
+    .pelicula .reserva_correo{
+        background-color: #ff9100;
+        color:black;
+    }
+
+    .reserva_correo >img,.reserva_sms >img{
+        width:20px;
+        height:20px;
+    }
+
+section h1{
+    font-size:1.6rem;
+}
+
+section h2{
+    font-size:1.3rem;
+}
+
+.contenido_pelicula h1{
+    padding-bottom:2%;
+}
+
+.contenido_pelicula h2{
+    padding-bottom:2%;
+}
+
+
+.voces img, .texto img{
+    margin-left:2%;
+}
+
+.horario{
+    display:flex;
+    flex-flow:row wrap;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+
+.horario>div:nth-child(1){
+    flex-basis:10%;
+}
+
+.reserva_disponible,.reserva_no_disponible{
+    margin-left:2%;
+}
+
+.reserva_disponible{
+    background-color:green;
+    color:white;
+}
+
+.reserva_disponible:hover{
+    cursor: pointer;
+}
+
+.reserva_no_disponible:hover{
+    cursor: not-allowed;
+}
+
+.reserva_no_disponible{
+    background-color:red;
+    color:black;
+}
+
+
+/*Formulario comun*/
+form{
+    width:100%;
+    padding:2%;
+}
+
+form div{
+    padding-bottom:2%;
+}
+
+form input:invalid{
+    border:2px solid red;
+}
+
+#botonEnviarForm{
+    margin-bottom:2%;
+}
+/*Fin formulario*/
+
+.pelicula{
+    text-align:center;
+    background-color:black;
+    color:white;
+}
+
+.pelicula .reserva_sms, .pelicula .reserva_correo{
+    display:flex;
+    justify-content: center;
+    margin-top:2%;
+}
+
+.pelicula .reserva_sms{
+    background-color: #cf2a27;
+}
+
+.pelicula .reserva_correo{
+    background-color: #ff9900;
+}
+
+/*Footer Comun*/
+footer > div{
+    font-size:1rem;
+    display: inline-block;
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+/*Fin footer*/
+
+@media (min-width:600px){
+    .left{
+        display: inline-block;
+        width:30%;
+        vertical-align: top;
+        border-left:2px solid black;
+        border-bottom:2px solid black;
+        padding:5px;
+        color:white;
+    }
+
+    .right{
+        display: inline-block;
+        width:70%;
+        vertical-align: top;
+        background-color: black;
+        padding:2%;
+        color:white;
+    }
+
+    .voces , .texto{
+        display:flex;
+        flex-flow:row wrap;
+        align-items:center;
+        padding-top:1%;
+    }
+
+    .voces > label, .texto > label{
+        flex-basis:10%;
+    }
+
+}
+
+@media (max-width:600px){
+    header{
+        border-bottom:2px solid red;
+    }
+    header > div{
+        background-color:black;
+    }
+
+    section{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:100%;
+    }
+
+    article:nth-child(2){
+        background-color:#237879;
+    }
+    
+    .horario > div:nth-child(1){
+        flex-basis:100%;
+        margin-bottom:4px;
+        border-bottom: 2px solid black;
+    }
+
+
+    .left{
+        width:100%;
+        padding:5px;
+    }
+    .right{
+        text-align:center;
+        width:100%;
+        padding:5%;
+        border-left:2px solid black;
+        border-right:2px solid black;
+        border-bottom:4px solid white;
+        background-color:rgb(113, 113, 243);
+        color:black;
+    }
+
+    .voces, .texto{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-content:center;
+        padding-top:1%;
+        padding-bottom:2%;
+    }
+
+    .horario{
+        justify-content:center;
+    }
+
+}

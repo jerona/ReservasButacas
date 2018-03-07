@@ -1,0 +1,233 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+}
+
+svg{
+  width:100%;
+}
+
+/*Cabecera comun*/
+header{
+    width:100%;
+    font-size:0rem;
+}
+
+header img{
+    height:100%;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+}
+
+#botonIniciarSesion,#botonRegistrarse{
+    border:2px solid black;
+}
+
+header > div{
+    display: inline-block;
+    width:50%;
+    height:50px;
+    font-size:1rem;
+}
+
+header div:nth-child(1){
+    vertical-align: top;
+    background-color:black;
+}
+
+header div:nth-child(2){
+    text-align:right;
+    vertical-align: top;
+    background-color:white;
+}
+
+
+/** https://www.cssmatic.com/es/gradient-generator#
+* 
+*/
+article:nth-child(3){
+
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
+
+
+}
+
+/*leyenda*/
+.leyenda>div>div{
+    width:10px;
+    height:10px;
+    border:2px solid black;
+    display: inline-block;
+    margin-right:10px;
+    margin-left:10px;
+  }
+  
+.estado_compra >div{
+  display:flex;
+  justify-content:space-between;
+   margin-left:10px;
+   margin-right:10px;
+}
+
+.estado_compra >div:nth-child(3){
+  display:flex;
+  justify-content:center;
+   margin-left:10px;
+   margin-right:10px;
+}
+
+article:nth-child(2){
+  display:flex;
+  flex-flow:row wrap;
+}
+
+article:nth-child(3){
+  display:flex;
+  flex-flow:row wrap;
+  width:100%;
+  justify-content: center;
+  border:2px solid black;
+}
+
+  .leyenda{
+    display: flex;
+    flex-flow: row wrap;
+    flex:0 0 100%;
+    border:2px solid black;
+    order:2;
+    background-color:rgb(182, 28, 169);
+  }
+
+.estado_compra{
+  display: flex;
+  flex-flow: row wrap;
+  flex:0 0 100%;
+  order:1;
+  justify-content:center;
+}
+
+.estado_compra >div{
+  display:flex;
+  background-color:violet;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  flex-basis:20%;
+  justify-content:space-around;
+}
+
+.estado_compra >div:nth-child(3){
+  background:initial;
+  border:0;
+}
+
+
+  .leyenda > *, .estado_compra > *{
+    display:flex;
+    flex-flow:row wrap;
+    align-items:center;
+    font-size:1rem;
+  }
+  
+  .leyenda>div:nth-child(1)>div:nth-child(1){
+    background-color:white;
+  }
+  
+  .leyenda>div:nth-child(2)>div:nth-child(1){
+    background-color:red;
+  }
+  
+  .leyenda>div:nth-child(3)>div:nth-child(1){
+    background-color:green;
+  }
+  
+  .leyenda>div:nth-child(4){
+    display: inline-block;
+    text-align: right;
+    width:50%;
+  }
+  
+  .leyenda>div:nth-child(5){
+    display: inline-block;
+    text-align:center;
+    width:50%;
+  }
+  .leyenda>div:nth-child(6){
+    width:100%;
+    text-align: center;
+  }
+
+/*fin leyenda*/
+/*Estado Butacas*/
+  /**
+* <a href="https://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/">Estilos dados con variables</a>
+*/
+.ocupado {
+    --primary-color: rgb(204, 0, 0);
+    --secondary-color: rgb(204, 0, 0);
+    --tertiary-color: rgb(204, 0, 0);
+  }
+
+  .libre{
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(255, 255, 255);
+    --tertiary-color: rgb(255, 255, 255);
+  }
+
+  .reservado{
+    --primary-color: #005500;
+    --secondary-color: #005500;
+    --tertiary-color: #005500;
+  }
+
+
+  .estado_compra{
+    background-color:red;
+  }
+
+  
+
+/*Fin estado Butacas*/
+article:nth-child(1){
+    width:100%;
+    text-align:center;
+    background-color:white;
+    border:2px solid black;
+    color:black;
+}
+
+article:nth-child(0) h1{
+  text-align:center;
+}
+article:nth-child(1) a{
+    text-decoration: none;
+    color:rgb(64, 64, 243);
+}
+
+.sala_cine svg{
+    background-color:orange;
+}
+
+/*Footer Comun*/
+footer > div{
+    font-size:1rem;
+    display: inline-block;
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+/*Fin footer*/

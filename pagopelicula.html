@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reserva Pelicula</title>
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/estilo_pago_reserva.css">
+    <link rel="stylesheet" href="css/estiloFormulario.css">
+
+    <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="js/toastr.min.js"></script>
+
+    <script src="js/Utilidades.js"></script>
+    <script src="js/GestionToastr.js"></script>
+    <script src="js/PeliculasJSON.js"></script>
+    <script src="js/SalaCineJSON.js"></script>
+    <script src="js/WebLocalStorage.js"></script>
+    <script src="js/GestionPagoPelicula.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <svg version="1.1" id="logotipo_svg" 
+                xmlns="http://www.w3.org/2000/svg" 
+                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px" width="250px" height="35px" x="0px" viewBox="0 0 9210 950">
+                <text fill="orange" font-family="Verdana" font-size="500" y="650" x="1300">
+                    Cine Joel
+                </text>
+                <g>
+                    <path fill="orange" d="M900.199,0h-46.514c-11.046,0-20,8.954-20,20v24.89c0,11.045-8.954,20-20,20h-43.37c-11.046,0-20-8.955-20-20V20
+                        c0-11.046-8.953-20-20-20H208.121c-11.046,0-20,8.954-20,20v24.89c0,11.045-8.954,20-20,20h-43.37c-11.046,0-20-8.955-20-20V20
+                        c0-11.046-8.954-20-20-20h-44.95c-11.046,0-20,8.954-20,20v900c0,11.046,8.954,20,20,20h44.95c11.046,0,20-8.954,20-20v-18.285
+                        c0-11.046,8.954-20,20-20h43.37c11.046,0,20,8.954,20,20V920c0,11.046,8.954,20,20,20h522.194c11.047,0,20-8.954,20-20v-18.285
+                        c0-11.046,8.954-20,20-20h43.37c11.046,0,20,8.954,20,20V920c0,11.046,8.954,20,20,20h46.514c11.046,0,20-8.954,20-20V20
+                        C920.199,8.955,911.245,0,900.199,0z M188.121,765.369c0,11.046-8.954,20-20,20h-43.37c-11.046,0-20-8.954-20-20v-43.37
+                        c0-11.045,8.954-20,20-20h43.37c11.046,0,20,8.955,20,20V765.369z M188.121,585.653c0,11.045-8.954,20-20,20h-43.37
+                        c-11.046,0-20-8.955-20-20v-43.371c0-11.045,8.954-20,20-20h43.37c11.046,0,20,8.955,20,20V585.653z M188.121,405.936
+                        c0,11.047-8.954,20-20,20h-43.37c-11.046,0-20-8.953-20-20v-43.37c0-11.046,8.954-20,20-20h43.37c11.046,0,20,8.954,20,20V405.936z
+                            M188.121,226.22c0,11.046-8.954,20-20,20h-43.37c-11.046,0-20-8.954-20-20v-43.37c0-11.045,8.954-20,20-20h43.37
+                        c11.046,0,20,8.955,20,20V226.22z M663.836,834.267c0,11.047-8.954,20-20,20H296.164c-11.046,0-20-8.953-20-20V673.545
+                        c0-11.046,8.954-20,20-20h347.672c11.046,0,20,8.954,20,20V834.267L663.836,834.267z M663.836,550.361c0,11.046-8.954,20-20,20
+                        H296.164c-11.046,0-20-8.954-20-20V389.639c0-11.045,8.954-20,20-20h347.672c11.046,0,20,8.955,20,20V550.361L663.836,550.361z
+                            M663.836,266.454c0,11.046-8.954,20-20,20H296.164c-11.046,0-20-8.954-20-20V105.732c0-11.045,8.954-20,20-20h347.672
+                        c11.046,0,20,8.955,20,20V266.454L663.836,266.454z M833.686,765.369c0,11.046-8.954,20-20,20h-43.37c-11.046,0-20-8.954-20-20
+                        v-43.37c0-11.045,8.954-20,20-20h43.37c11.046,0,20,8.955,20,20V765.369z M833.686,585.653c0,11.045-8.954,20-20,20h-43.37
+                        c-11.046,0-20-8.955-20-20v-43.371c0-11.045,8.954-20,20-20h43.37c11.046,0,20,8.955,20,20V585.653z M833.686,405.936
+                        c0,11.047-8.954,20-20,20h-43.37c-11.046,0-20-8.953-20-20v-43.37c0-11.046,8.954-20,20-20h43.37c11.046,0,20,8.954,20,20V405.936z
+                            M833.686,226.22c0,11.046-8.954,20-20,20h-43.37c-11.046,0-20-8.954-20-20v-43.37c0-11.045,8.954-20,20-20h43.37
+                        c11.046,0,20,8.955,20,20V226.22z"/>
+                </g>
+            </svg>        </div>
+        <div>
+            <input id="botonIniciarSesion" type="button" value="Iniciar Sesión"/><!--
+            --><input id="botonRegistrarse" type="button" value="Registrarse"/>
+        </div>
+    </header>
+    <section aria-labelledby="contenido_cuerpo">
+        <article>
+            <div>
+                <a href="index.html">Inicio</a>
+                <label>&gt;</label>
+                <a href="peliculareservar.html">Pelicula Reservar</a>
+                <label>&gt;</label>
+                <a href="peliculareservar.html">Reservas de Butacas</a>
+                <label>&gt;</label>
+                <label>Pago Entradas</label>
+            </div>
+        </article>
+        <article>
+                <div class="container">
+                <div class="card"></div>
+                <div class="card">
+                    <h1 class="title">Pago Entradas</h1>
+                    <div class="datosPelicula">
+                        <span>Pelicula:</span>
+                        <span id="span_nombre_pelicula"></span>
+                    </div>
+                    <div class="datosPelicula">
+                        <span>Fecha:</span>
+                        <span id="span_dia_semana"></span>
+                    </div>
+                    <div class="datosPelicula">
+                        <span>Sala Cine:</span>
+                        <span id="span_nombre_sala_cine"></span>
+                    </div>
+                    <div class="datosPelicula">
+                        <span>Cantidad Entradas:</span>
+                        <span id="span_entradas_totales">4</span>
+                    </div>
+                    <div class="datosPelicula"> 
+                        <span>Precio Total:</span>
+                        <span id="span_precio_total">4€</span>
+                    </div>
+                    <form tabindex="0" action="confirmacioncompra.html" method="GET" onsubmit="return tramiteCompra()">
+                        <div class="input-container">
+                            <input type="#{type}" id="#{form_nombre}" pattern="[A-Za-z]{3,50} [A-Za-z]{3,50}" 
+                                   title="nombre espacio y nombre" required="required"/>
+                            <label for="#{form_nombre}">
+                                <span>
+                                    Nombre
+                                    <strong>*</strong>
+                                </span>
+                            </label>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="input-container">
+                            <input type="#{type}" id="#{form_apellidos}" pattern="[A-Za-z]{3,50} [A-Za-z]{3,50}" 
+                                   title="apellido espacio apellido" required="required"/>
+                            <label for="#{form_apellidos}"> 
+                                <span>
+                                    Apellidos
+                                    <strong>*</strong>
+                                </span>
+                            </label>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="input-container">
+                            <input type="#{type}" id="#{form_email}" 
+                            pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+                            title="Email no valido" required="required">
+                            <label for="#{form_email}">
+                                <span>
+                                    Email
+                                    <strong>*</strong>
+                                </span>
+                            </label>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="input-container">
+                            <input type="#{type}" id="#{for_email1}" 
+                            pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+                            title="Email no valido"
+                            required="required"/>
+                            <label for="#{for_email1}">
+                                <span>
+                                    Email
+                                    <strong>*</strong>
+                                </span>
+                            </label>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="input-container">
+                            <input type="#{type}" id="#{for_telefono}" required="required"/>
+                            <label for="#{for_telefono}">
+                                <span>
+                                    Teléfono
+                                    <strong>*</strong>
+                                </span>
+                            </label>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="button-container">
+                        <button>
+                            <span>Comprar</span>
+                        </button>
+                        </div>
+                        <div>
+                            <a href="butacaselegir.html">&lt;Volver</a>
+                        </div>
+                    </form>
+
+                </div>
+                </div>
+        </article>  
+
+    </section>
+    <footer>
+        <div>
+            <label>Desarrollado por Joel Alberto Armas Reyes</label>                
+        </div>
+    </footer>
+</body>
+</html>
